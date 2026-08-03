@@ -169,11 +169,15 @@ export default function Home() {
 
           <div className="hero-visual" aria-label="Logotipo de Tatoox Academy">
             <div className="hero-stamp hero-stamp--top">DIBUJO · FLOW · OFICIO</div>
+            <span className="hero-coordinate hero-coordinate--top" aria-hidden="true">BCN / 41°23′N</span>
             <div className="hero-logo-wrap">
+              <span className="hero-frame-echo hero-frame-echo--one" aria-hidden="true" />
+              <span className="hero-frame-echo hero-frame-echo--two" aria-hidden="true" />
               <span className="hero-orbit hero-orbit--one" />
               <span className="hero-orbit hero-orbit--two" />
               <span className="hero-cross hero-cross--one" />
               <span className="hero-cross hero-cross--two" />
+              <span className="hero-street-sticker" aria-hidden="true">RAW / 01</span>
               <div className="hero-logo-frame">
                 <Image
                   src="/logo-tatoox.jpeg"
@@ -185,9 +189,11 @@ export default function Home() {
                   className="hero-logo"
                 />
               </div>
+              <span className="hero-ink-ring" aria-hidden="true" />
               <div className="hero-side-label hero-side-label--left">EST. 2024</div>
               <div className="hero-side-label hero-side-label--right">INK / FORM / SOUL</div>
             </div>
+            <span className="hero-coordinate hero-coordinate--bottom" aria-hidden="true">NOISE / NERVE / FLOW</span>
             <div className="hero-stamp hero-stamp--bottom">MADE BY HAND / NO SHORTCUTS</div>
           </div>
         </div>
