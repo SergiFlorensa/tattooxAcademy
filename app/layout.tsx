@@ -13,11 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tatooxacademy.com"),
   title: "Tatoox Academy · Tinta, ideas y calle",
   description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
   keywords: ["Tatoox Academy", "tatuador", "tatuajes", "dibujo", "Barcelona"],
-  other: {
-    "codex-preview": "development",
+  openGraph: {
+    title: "Tatoox Academy · Tinta, ideas y calle",
+    description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
+    images: [{ url: "/og.png", width: 1734, height: 908, alt: "Tatoox Academy · Tinta, ideas y calle" }],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tatoox Academy · Tinta, ideas y calle",
+    description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
+    images: ["/og.png"],
   },
   icons: {
     icon: "/logo-tatoox.jpeg",

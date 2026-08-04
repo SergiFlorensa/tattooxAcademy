@@ -7,10 +7,10 @@ import type { FormEvent } from "react";
 const contactEmail = "hola@tatooxacademy.com";
 
 const navigation = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Historia", href: "#historia" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Contacto", href: "#contacto" },
+  { index: "00", label: "Inicio", href: "#inicio" },
+  { index: "01", label: "Historia", href: "#historia" },
+  { index: "02", label: "Proyectos", href: "#proyectos" },
+  { index: "03", label: "Contacto", href: "#contacto" },
 ];
 
 const projects = [
@@ -109,14 +109,21 @@ export default function Home() {
     <main className="site-shell">
       <div className="ambient-noise" aria-hidden="true" />
 
-      <header className="site-header">
+      <header className={`site-header ${menuOpen ? "site-header--menu-open" : ""}`}>
+        <span className="header-rail" aria-hidden="true">RAW / BCN / 001</span>
+
         <a className="brand-lockup" href="#inicio" onClick={closeMenu} aria-label="Tatoox Academy, volver al inicio">
-          <span className="brand-mark">TX</span>
+          <span className="brand-mark"><span>TX</span></span>
           <span className="brand-name">
             Tatoox
-            <span>Academy</span>
+            <span>Academy / Ink lab</span>
           </span>
         </a>
+
+        <span className="header-status" aria-label="Estudio creativo activo">
+          <span aria-hidden="true" />
+          En proceso
+        </span>
 
         <button
           className="menu-toggle"
@@ -125,18 +132,24 @@ export default function Home() {
           aria-controls="primary-navigation"
           onClick={() => setMenuOpen((current) => !current)}
         >
+          <span className="menu-label">{menuOpen ? "Cerrar" : "Menú"}</span>
           <MenuIcon open={menuOpen} />
           <span className="sr-only">{menuOpen ? "Cerrar menú" : "Abrir menú"}</span>
         </button>
 
         <nav id="primary-navigation" className={`site-nav ${menuOpen ? "site-nav--open" : ""}`} aria-label="Navegación principal">
+          <div className="nav-meta" aria-hidden="true">
+            <span>Tatoox / Index</span>
+            <span>Barcelona — 2024</span>
+          </div>
           {navigation.map((item) => (
             <a key={item.href} href={item.href} onClick={closeMenu}>
-              {item.label}
+              <span className="nav-index">{item.index}</span>
+              <span>{item.label}</span>
             </a>
           ))}
           <a className="nav-cta" href="#contacto" onClick={closeMenu}>
-            Hablemos <ArrowUpRight />
+            <span>Trae tu idea</span> <ArrowUpRight />
           </a>
         </nav>
       </header>
@@ -283,11 +296,11 @@ export default function Home() {
           <span>Proyectos / trabajos</span>
         </div>
         <div className="projects-header">
-          <div>
-            <p className="eyebrow">El cuaderno no para.</p>
-            <h2>Ideas en proceso<span>.</span></h2>
+          <div className="projects-header__copy">
+            <p className="eyebrow projects-eyebrow">Flashbook / Tatoox Academy</p>
+            <h2>Ideas que se <span>quedan.</span></h2>
           </div>
-          <p>Una selección viva de dibujos, pruebas y piezas que irán creciendo con el aprendizaje.</p>
+          <p>Una selección viva de dibujos, pruebas y piezas que empiezan en el papel y esperan su momento en la piel.</p>
         </div>
 
         <div className="projects-grid">
