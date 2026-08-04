@@ -29,7 +29,7 @@ test("renders the branded Tatoox Academy page", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>Tatoox Academy · Tinta, ideas y calle<\/title>/i);
-  assert.match(html, /<meta property="og:image" content="https:\/\/tatooxacademy\.com\/og\.png"\/>/i);
+  assert.match(html, /<meta property="og:image" content="https:\/\/tatoox-academy\.sergiflorensa\.chatgpt\.site\/og\.png"\/>/i);
   assert.match(html, /<header class="site-header/);
   assert.match(html, />Trae tu idea</);
   assert.doesNotMatch(html, /name=["']codex-preview["']/i);

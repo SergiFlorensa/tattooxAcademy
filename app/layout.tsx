@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tatooxacademy.com"),
+  metadataBase: new URL("https://tatoox-academy.sergiflorensa.chatgpt.site"),
   title: "Tatoox Academy · Tinta, ideas y calle",
   description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
   keywords: ["Tatoox Academy", "tatuador", "tatuajes", "dibujo", "Barcelona"],
