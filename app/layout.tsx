@@ -1,51 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tatoox-academy.sergiflorensa.chatgpt.site"),
-  title: "Tatoox Academy · Tinta, ideas y calle",
-  description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
-  keywords: ["Tatoox Academy", "tatuador", "tatuajes", "dibujo", "Barcelona"],
+  title: "DFM Tattoo Artist · Albatàrrec, Lleida",
+  description: "El teu projecte, la meva passió. DFM Tattoo Artist: realisme, microrealisme i fine line a Albatàrrec, Lleida.",
+  keywords: ["DFM", "tattoo", "tatuatges", "realisme", "fine line", "microrealisme", "Albatàrrec", "Lleida"],
   openGraph: {
-    title: "Tatoox Academy · Tinta, ideas y calle",
-    description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
-    images: [{ url: "/og.png", width: 1734, height: 908, alt: "Tatoox Academy · Tinta, ideas y calle" }],
-    locale: "es_ES",
-    type: "website",
+    title: "DFM Tattoo Artist · Albatàrrec, Lleida",
+    description: "El teu projecte, la meva passió. Tatuatges personalitzats amb estil i detall.",
+    images: [{ url: "/portfolio/p02-x10.webp", width: 1080, height: 1440, alt: "DFM Tattoo Artist: retrat original del portafoli" }],
+    locale: "ca_ES", type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tatoox Academy · Tinta, ideas y calle",
-    description: "El diario visual de un aprendiz de tatuador: dibujos, ideas, proceso y oficio.",
-    images: ["/og.png"],
-  },
-  icons: {
-    icon: "/logo-tatoox.jpeg",
-    shortcut: "/logo-tatoox.jpeg",
-  },
+  twitter: { card: "summary_large_image", title: "DFM Tattoo Artist", images: ["/portfolio/p02-x10.webp"] },
+  icons: { icon: "/dfm-logo-2026.jpg", shortcut: "/dfm-logo-2026.jpg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="ca"><body>{children}</body></html>;
 }

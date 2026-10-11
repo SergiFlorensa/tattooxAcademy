@@ -41,3 +41,8 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+/artifacts/
+/assets/
+/tmp/
+/bash.exe.stackdump
+/tsconfig.tsbuildinfo

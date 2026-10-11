@@ -10,6 +10,8 @@ const { d1, r2 } = hostingConfig;
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
+// Allow only the exact hostname supplied when a temporary Quick Tunnel is running.
+const cloudflareQuickTunnelHost = process.env.CLOUDFLARE_TUNNEL_HOST;
 
 const localBindingConfig = {
   main: "./worker/index.ts",
@@ -46,7 +48,10 @@ export default defineConfig(async () => {
   return {
     server: {
       host: "0.0.0.0",
-      allowedHosts: ["terminal.local"],
+      allowedHosts: [
+        "terminal.local",
+        ...(cloudflareQuickTunnelHost ? [cloudflareQuickTunnelHost] : []),
+      ],
       ...(isCodexSeatbeltSandbox
         ? { watch: { useFsEvents: false, usePolling: true } }
         : {}),
